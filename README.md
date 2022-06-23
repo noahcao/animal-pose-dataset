@@ -29,16 +29,22 @@ Then, load the dataset:
 
 ```py
 import hub
-ds = hub.load("hub://activeloop/animal-pose-dataset")
 
-# The tensor layout for this dataset can be inspected using:
-ds.summary()
+# Load dataset with keypoints
+ds_labeled = hub.load("hub://activeloop/animal-pose-keypoint-labeled")
+
+# Load dataset without keypoints
+ds_unlabeled = hub.load("hub://activeloop/animal-pose-keypoint-unlabeled")
+
+# The tensor layout for any dataset can be inspected using:
+ds_labeled.summary()
+
 # The dataset can be also be visualized in the Activeloop 
 # Platform, or using an iframe in a jupyter notebook:
-ds.visualize()
+ds_labeled.visualize()
 ```
 
-For more information, please check out the [Hub Documentation](https://docs.activeloop.ai)!
+For more information, please check out the [Hub Documentation](https://docs.activeloop.ai). Specific information about this dataset in Hub can also be found [here](https://docs.activeloop.ai/datasets/animal-pose-dataset)!
 
 
 ### Citation
