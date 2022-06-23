@@ -19,6 +19,34 @@ For the **Part I** subset, the annotations follow the format convention of COCO.
 
 For the **Part II** subset, the annotation is also included in a json file but only bounding boxes coordinates *[xmin, ymin, xmax, ymax]* are provided.
 
+## How to Use with Hub
+
+A simple way of using this dataset is with [Activeloop](https://activeloop.ai)'s Python package [Hub](https://github.com/activeloopai/Hub), an open-source dataset format for AI that enables you to stream machine learning datasets while training machine learning models!
+
+First, run `pip install hub` (or `pip3 install hub`).
+
+Then, load the dataset:
+
+```py
+import hub
+
+# Load dataset with keypoints
+ds_labeled = hub.load("hub://activeloop/animal-pose-keypoint-labeled")
+
+# Load dataset without keypoints
+ds_unlabeled = hub.load("hub://activeloop/animal-pose-keypoint-unlabeled")
+
+# The tensor layout for any dataset can be inspected using:
+ds_labeled.summary()
+
+# The dataset can be also be visualized in the Activeloop 
+# Platform, or using an iframe in a jupyter notebook:
+ds_labeled.visualize()
+```
+
+For more information, please check out the [Hub Documentation](https://docs.activeloop.ai). Specific information about this dataset in Hub can also be found [here](https://docs.activeloop.ai/datasets/animal-pose-dataset)!
+
+
 ### Citation
 
 If the dataset helps you, please cite our work:
